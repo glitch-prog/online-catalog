@@ -1,11 +1,10 @@
 import React from 'react';
 import { ButtonContainer } from '../../containers/Button/Button';
 import { InputContainer } from '../../containers/Input/Input';
-import { ISignInPageView } from './SignInPage.interface';
+import { ISignInPageView } from '../SignInPage/SignInPage.interface';
 
-export const SignInPageView = ({handleOnClick,handleOnChangeEmail,handleOnChangePassword}:ISignInPageView) => {
-  return (
-    <>
+export const SignUpPageView = ({handleOnClick,handleOnChangeEmail,handleOnChangePassword}:ISignInPageView) => {
+  return <div><>
       <InputContainer
         type='text'
         handleOnChange={handleOnChangeEmail}
@@ -21,6 +20,5 @@ export const SignInPageView = ({handleOnClick,handleOnChangeEmail,handleOnChange
         handleOnClick={handleOnClick}
         className='sign__btn'
       />
-    </>
-  );
+    </></div>;
 };
