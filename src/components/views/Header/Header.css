@@ -1,0 +1,12 @@
+.header_catalog_page{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_catalog_page_sign{
+  display: flex;
+  min-width: 125px;
+  justify-content: space-between;
+}

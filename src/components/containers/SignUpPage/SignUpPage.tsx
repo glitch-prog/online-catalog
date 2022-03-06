@@ -20,11 +20,7 @@ export const SignUpPageContainer = () => {
 
   const handleOnClickSignUp = async () => {
     try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        signUpEmail,
-        signUpPassword
-      );
+      const user = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
       // dispatch({ type: 'SET_USER', payload: user });
       // navigate(CANVAS_PAGE);
     } catch (error) {
@@ -36,11 +32,7 @@ export const SignUpPageContainer = () => {
 
   return (
     <div>
-      <SignUpPageView
-        handleOnChangeEmail={handleOnChange}
-        handleOnChangePassword={handleOnChange}
-        handleOnClick={handleOnClickSignUp}
-      />
+      <SignUpPageView handleOnChangeEmail={handleOnChange} handleOnChangePassword={handleOnChange} handleOnClick={handleOnClickSignUp} />
     </div>
   );
 };
