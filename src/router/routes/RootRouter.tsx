@@ -10,7 +10,7 @@ export function RootRouter() {
     <Routes>
       <Route path={SIGN_IN_PAGE} element={<SignInPageContainer />} />
       <Route path={SIGN_UP_PAGE} element={<SignUpPageContainer />} />
-      <Route path={CATALOG_PAGE} element={<CatalogPageContainer />} />
+      <Route path={'/'} element={<CatalogPageContainer />} />
       {/* <Route
         path={CANVAS_PAGE}
         element={
@@ -26,8 +26,8 @@ export function RootRouter() {
             <CanvasGalleryContainer />
           </PrivateRoute>
         }
-      />
-      <Route path="/" element={<Start />} /> */}
+      />*/}
+      {/* <Route path="/" element={< />} />  */}
     </Routes>
   );
 }
