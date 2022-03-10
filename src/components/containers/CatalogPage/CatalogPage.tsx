@@ -4,7 +4,9 @@ import { CatalogPageView } from '../../views/CatalogPage/CatalogPage';
 export const CatalogPageContainer = () => {
   const [open, setOpen] = useState(false);
 
-  const handleOnClickSetClose = () => {
+  const handleOnClickSetClose = (event: React.MouseEvent<HTMLParagraphElement>) => {
+    const target = event.target as HTMLParagraphElement;
+    if(target.className === 'modal')
     setOpen(false);
   };
 

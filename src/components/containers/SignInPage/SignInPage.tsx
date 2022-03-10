@@ -29,7 +29,6 @@ export const SignInPageContainer = () => {
       const user = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
       // dispatch({ type: 'SET_USER', payload: user });
       // dispatch({ type: 'SET_AUTH', payload: true });
-      navigate(CATALOG_PAGE);
     } catch (e) {
       returnError('Wrong email or password!');
     }
