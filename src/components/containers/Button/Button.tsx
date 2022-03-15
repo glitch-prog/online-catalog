@@ -1,14 +1,11 @@
 import React from 'react';
 import { ButtonView } from '../../views/Button/Button';
+import { IButtonContainer } from './Button.interface';
 
-export const ButtonContainer = () => {
+export const ButtonContainer = ({ text, handleOnClick, className }: IButtonContainer) => {
   return (
     <>
-      <ButtonView
-        text='Click me'
-        handleOnClick={() => console.log('clicked')}
-        className='sign__up__btn'
-      />
+      <ButtonView text={text} handleOnClick={handleOnClick} className={className} />
     </>
   );
 };
