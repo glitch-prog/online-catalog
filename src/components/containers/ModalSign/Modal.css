@@ -10,4 +10,10 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+
+}
+
+.sign__options{
+  width: 410px;
+  background-color: #ffffff;
 }

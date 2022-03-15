@@ -9,9 +9,10 @@
   justify-content: center;
   background: #fff;
   /* border: 1px solid #000000; */
-  border-radius: 40px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .sign__input{
+
 }
 .sign__btn{}

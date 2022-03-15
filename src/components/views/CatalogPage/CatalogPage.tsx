@@ -1,19 +1,30 @@
 import React from 'react';
-import { InputContainer } from '../../containers/Input/Input';
+import { useAppSelector } from '../../../hooks/reducingHooks';
+import { ICard } from '../../../store/reducers/dataReducer';
 import { ModalSign } from '../../containers/ModalSign/ModalSign';
 import { SignInPageContainer } from '../../containers/SignInPage/SignInPage';
-import { SignUpPageContainer } from '../../containers/SignUpPage/SignUpPage';
 import { Container } from '../Container/Container';
 import { Header } from '../Header/Header';
 import { ICatalogPageView } from './CatalogPage.interface';
+import './CatalogPage.css';
 
 export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen }: ICatalogPageView) => {
+  const products = useAppSelector(state => state.data.cards);
   return (
     <>
       <Container>
         <Header handleOnClickSetOpen={handleOnClickSetOpen} />
+
         <main className="main_catalog_page">
-          <h3>main</h3>
+          {products.map((el: ICard) => (
+            <div className="product__card" key={el.id}>
+              <img src={el.img} alt="img" />
+              <div className="product__info">
+                <p>{el.description}</p>
+                <h4>{el.seller}</h4>
+              </div>
+            </div>
+          ))}
         </main>
 
         <footer className="footer_catalog_page">

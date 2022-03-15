@@ -5,6 +5,7 @@ import { IHeader } from './Header.interface';
 import logo from '../../../img/logo.png';
 import cart from '../../../img/cart.png';
 import loopa from '../../../img/loopa.png';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
 export const Header = ({ handleOnClickSetOpen }: IHeader) => {
   return (
