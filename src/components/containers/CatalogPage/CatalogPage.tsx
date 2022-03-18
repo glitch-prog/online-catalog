@@ -39,7 +39,6 @@ export const CatalogPageContainer = () => {
 
   return (
     <>
-     
       <CatalogPageView isClose={handleOnClickSetClose} isOpen={open} handleOnClickSetOpen={handleOnClickSetOpen} data={products} />
     </>
   );
