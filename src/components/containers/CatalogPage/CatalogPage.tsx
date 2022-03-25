@@ -1,11 +1,14 @@
 import { collection, DocumentData, getDocs } from 'firebase/firestore';
 import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { db } from '../../../config/firebase-config';
+import { LOADING_PRODUCT } from '../../../constants/constants';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reducingHooks';
 import { ICard } from '../../../store/reducers/dataReducer';
 import { CatalogPageView } from '../../views/CatalogPage/CatalogPage';
 
 export const CatalogPageContainer = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const products = useAppSelector(state => state.data['cards']);
   const dispatch = useAppDispatch();
@@ -17,6 +20,10 @@ export const CatalogPageContainer = () => {
 
   const handleOnClickSetOpen = () => {
     setOpen(true);
+  };
+
+  const handleOnClickNavigateToAddPage = () => {
+    navigate(LOADING_PRODUCT);
   };
 
   const getData = useCallback(
@@ -39,7 +46,7 @@ export const CatalogPageContainer = () => {
 
   return (
     <>
-      <CatalogPageView isClose={handleOnClickSetClose} isOpen={open} handleOnClickSetOpen={handleOnClickSetOpen} data={products} />
+      <CatalogPageView isClose={handleOnClickSetClose} isOpen={open} handleOnClickSetOpen={handleOnClickSetOpen} handleOnClickNavigateToAddPage={handleOnClickNavigateToAddPage} data={products} />
     </>
   );
 };

@@ -1,7 +1,9 @@
 import { AnyAction } from '@reduxjs/toolkit';
+import { StringLiteralLike } from 'typescript';
 
 export interface ICard {
   description: string;
+  name: string;
   id: string;
   img: string;
   seller: string;
@@ -12,7 +14,7 @@ interface IDefaultGalleryState {
 }
 
 const defaultDataState: IDefaultGalleryState = {
-  cards: [{ description: 'test', id: 'testId', img: 'testImg', seller: 'testSeller' }],
+  cards: [{ description: 'test', id: 'testId', img: 'testImg', seller: 'testSeller', name: 'testName' }],
 };
 
 export const dataReducer = (state = defaultDataState, action: AnyAction) => {

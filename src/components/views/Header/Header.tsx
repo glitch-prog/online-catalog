@@ -5,9 +5,10 @@ import { IHeader } from './Header.interface';
 import logo from '../../../img/logo.png';
 import cart from '../../../img/cart.png';
 import loopa from '../../../img/loopa.png';
+import AddIcon from '@mui/icons-material/Add';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
-export const Header = ({ handleOnClickSetOpen }: IHeader) => {
+export const Header = ({ handleOnClickSetOpen, handleOnClickNavigateToAddPage }: IHeader) => {
   return (
     <header className="header">
       <div className="header__catalog__page">
@@ -25,6 +26,8 @@ export const Header = ({ handleOnClickSetOpen }: IHeader) => {
           <p onClick={handleOnClickSetOpen}>Sign In</p>
           <p onClick={handleOnClickSetOpen}>Sign Up</p>
         </div>
+
+        <AddIcon onClick={handleOnClickNavigateToAddPage} />
         <a href="#">
           <img src={cart} alt="cart" />
         </a>

@@ -7,4 +7,5 @@ export interface ICatalogPageView {
   isClose: React.MouseEventHandler;
   handleOnClickSetOpen: () => void;
   data: ICard;
+  handleOnClickNavigateToAddPage: () => void;
 }
