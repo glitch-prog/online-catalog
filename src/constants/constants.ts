@@ -1,1 +1,4 @@
-export let a:number = 100;
+export const SIGN_UP_PAGE = '/sign_up_page';
+export const SIGN_IN_PAGE = '/sign_in_page';
+export const CATALOG_PAGE = '/catalog_page';
+export const LOADING_PRODUCT = '/loading_page';
