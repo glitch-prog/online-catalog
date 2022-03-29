@@ -8,7 +8,7 @@ import loopa from '../../../img/loopa.png';
 import AddIcon from '@mui/icons-material/Add';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
-export const Header = ({ handleOnClickSetOpen, handleOnClickNavigateToAddPage }: IHeader) => {
+export const Header = ({ handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart }: IHeader) => {
   return (
     <header className="header">
       <div className="header__catalog__page">
@@ -28,9 +28,9 @@ export const Header = ({ handleOnClickSetOpen, handleOnClickNavigateToAddPage }:
         </div>
 
         <AddIcon onClick={handleOnClickNavigateToAddPage} />
-        <a href="#">
+        <button onClick={handleOnClickNavigateToCart}>
           <img src={cart} alt="cart" />
-        </a>
+        </button>
       </div>
     </header>
   );

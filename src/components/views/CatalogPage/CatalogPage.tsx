@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from '../../../hooks/reducingHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reducingHooks';
 import { ICard } from '../../../store/reducers/dataReducer';
 import { ModalSign } from '../../containers/ModalSign/ModalSign';
 import { SignInPageContainer } from '../../containers/SignInPage/SignInPage';
@@ -8,12 +8,24 @@ import { Header } from '../Header/Header';
 import { ICatalogPageView } from './CatalogPage.interface';
 import './CatalogPage.css';
 
-export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage }: ICatalogPageView) => {
+export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart }: ICatalogPageView) => {
+  const dispatch = useAppDispatch();
   const products = useAppSelector(state => state.data.cards);
+  const cart = useAppSelector(state => state.cart.cartCards);
+
+  const addToCart = (el: any) => {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: el,
+    });
+    console.log(cart);
+  };
+  // const handleOnClickAddToCart = (el: any) => addToCart(el);
+
   return (
     <>
       <Container>
-        <Header handleOnClickSetOpen={handleOnClickSetOpen} handleOnClickNavigateToAddPage={handleOnClickNavigateToAddPage} />
+        <Header handleOnClickSetOpen={handleOnClickSetOpen} handleOnClickNavigateToAddPage={handleOnClickNavigateToAddPage} handleOnClickNavigateToCart={handleOnClickNavigateToCart} />
 
         <main className="main_catalog_page">
           {products.length > 1 ? (
@@ -25,7 +37,7 @@ export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleO
                   <p>{el.description}</p>
                   <h4>{el.seller}</h4>
                 </div>
-                <button>add to cart</button>
+                <button onClick={() => addToCart(el)}>add to cart</button>
               </div>
             ))
           ) : (

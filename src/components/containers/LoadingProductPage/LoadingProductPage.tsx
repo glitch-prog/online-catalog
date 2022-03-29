@@ -33,6 +33,7 @@ export const LoadingProductPageContainer = () => {
 
   const handleOnClickLoadProduct = async () => {
     const docRef = await addDoc(collection(db, 'products'), {
+      name: name,
       description: description,
       img: image,
       seller: '',
