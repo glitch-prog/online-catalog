@@ -1,8 +1,10 @@
 import React from 'react';
-import { useAppSelector } from '../../../hooks/reducingHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reducingHooks';
 import { CartPageView } from '../../views/CartPage/CartPage';
 
 export const CartPageContainer = () => {
-  const cart = useAppSelector(state => state.cart.cartCards);
-  return <CartPageView arr={[{ name: 1 }, { name: 2 }]} />;
+  const dispatch = useAppDispatch();
+  const cartArr = useAppSelector(state => state.cart.cartCards);
+  const removeItem = (id: any) => dispatch({ type: 'REMOVE_FROM_CART', payload: cartArr.filter((el: any) => el.id != id) });
+  return <CartPageView arr={cartArr} removeItem={removeItem} />;
 };

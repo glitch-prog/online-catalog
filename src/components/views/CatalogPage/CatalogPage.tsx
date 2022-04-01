@@ -8,19 +8,15 @@ import { Header } from '../Header/Header';
 import { ICatalogPageView } from './CatalogPage.interface';
 import './CatalogPage.css';
 
-export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart }: ICatalogPageView) => {
-  const dispatch = useAppDispatch();
+export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart, addToCart }: ICatalogPageView) => {
   const products = useAppSelector(state => state.data.cards);
-  const cart = useAppSelector(state => state.cart.cartCards);
 
-  const addToCart = (el: any) => {
-    dispatch({
-      type: 'ADD_TO_CART',
-      payload: el,
-    });
-    console.log(cart);
-  };
-  // const handleOnClickAddToCart = (el: any) => addToCart(el);
+  // const addToCart = (el: any) => {
+  //   dispatch({
+  //     type: 'ADD_TO_CART',
+  //     payload: el,
+  //   });
+  // };
 
   return (
     <>

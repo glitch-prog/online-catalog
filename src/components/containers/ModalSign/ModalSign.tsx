@@ -31,11 +31,15 @@ export const ModalSign = ({ children, isOpen, isClose }: IModal) => {
       <>
         <div className="modal" onClick={isClose}>
           <div className="sign">
-            <div className='sign__options'>
-              <p onClick={()=>setOption('sign in')}>Sign In</p>
-              <p onClick={()=>setOption('sign up')}>Sign Up</p>
+            <div className="sign__options">
+              <p onClick={() => setOption('sign in')} style={option == 'sign in' ? { color: 'red' } : { color: 'black' }}>
+                Sign In
+              </p>
+              <p onClick={() => setOption('sign up')} style={option != 'sign in' ? { color: 'red' } : { color: 'black' }}>
+                Sign Up
+              </p>
             </div>
-            {option =='sign in'?<SignInPageContainer/>:<SignUpPageContainer/>}
+            {option == 'sign in' ? <SignInPageContainer /> : <SignUpPageContainer />}
           </div>
         </div>
       </>,

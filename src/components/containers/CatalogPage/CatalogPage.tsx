@@ -62,7 +62,7 @@ export const CatalogPageContainer = () => {
         handleOnClickNavigateToAddPage={handleOnClickNavigateToAddPage}
         data={products}
         handleOnClickNavigateToCart={handleOnClickNavigateToCartPage}
-        // addToCart={addToCart}
+        addToCart={addToCart}
       />
     </>
   );

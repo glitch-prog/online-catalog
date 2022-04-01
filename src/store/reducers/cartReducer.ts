@@ -22,8 +22,8 @@ export const cartReducer = (state = defaultDataState, action: AnyAction) => {
     case 'ADD_TO_CART':
       return { ...state, cartCards: [...state.cartCards, action.payload] };
 
-    case 'GET_CARDS':
-      return { ...state, cards: action.payload };
+    case 'REMOVE_FROM_CART':
+      return { ...state, cartCards: action.payload };
 
     default:
       return state;

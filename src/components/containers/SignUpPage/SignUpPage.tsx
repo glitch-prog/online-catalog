@@ -5,7 +5,7 @@ import { useAppDispatch } from '../../../hooks/reducingHooks';
 import { SignUpPageView } from '../../views/SignUpPage/SignUpPage';
 
 export const SignUpPageContainer = () => {
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   // const navigate = useNavigate();
   const [signUpEmail, setSignUpEmail] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
@@ -20,9 +20,8 @@ export const SignUpPageContainer = () => {
 
   const handleOnClickSignUp = async () => {
     try {
-      const user = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
-      // dispatch({ type: 'SET_USER', payload: user });
-      // navigate(CANVAS_PAGE);
+      await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
+      dispatch({ type: 'SET_AUTH', payload: true });
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message);

@@ -9,5 +9,5 @@ export interface ICatalogPageView {
   data: ICard;
   handleOnClickNavigateToAddPage: () => void;
   handleOnClickNavigateToCart: () => void;
-  // handleOnClickAddToCart: (el: any) => any;
+  addToCart: (el: any) => any;
 }

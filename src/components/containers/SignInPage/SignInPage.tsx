@@ -27,10 +27,9 @@ export const SignInPageContainer = () => {
 
   const handleOnClickSignIn = async () => {
     try {
-      const user = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
+      await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
       // dispatch({ type: 'SET_USER', payload: user });
       dispatch({ type: 'SET_AUTH', payload: true });
-      console.log(isAuth);
     } catch (e) {
       returnError('Wrong email or password!');
     }
