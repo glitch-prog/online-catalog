@@ -7,6 +7,7 @@ import { Container } from '../Container/Container';
 import { Header } from '../Header/Header';
 import { ICatalogPageView } from './CatalogPage.interface';
 import './CatalogPage.css';
+import { ButtonContainer } from '../../containers/Button/Button';
 
 export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart, addToCart }: ICatalogPageView) => {
   const products = useAppSelector(state => state.data.cards);
@@ -34,6 +35,7 @@ export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleO
                   <h4>{el.seller}</h4>
                 </div>
                 <button onClick={() => addToCart(el)}>add to cart</button>
+                <ButtonContainer text={'buy'} className={'buy__btn'} handleOnClick={() => {}} />
               </div>
             ))
           ) : (
