@@ -12,13 +12,6 @@ import { ButtonContainer } from '../../containers/Button/Button';
 export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart, addToCart }: ICatalogPageView) => {
   const products = useAppSelector(state => state.data.cards);
 
-  // const addToCart = (el: any) => {
-  //   dispatch({
-  //     type: 'ADD_TO_CART',
-  //     payload: el,
-  //   });
-  // };
-
   return (
     <>
       <Container>
