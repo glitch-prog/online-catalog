@@ -11,6 +11,7 @@ import { CatalogPageView } from '../../views/CatalogPage/CatalogPage';
 export const CatalogPageContainer = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [isBuy, setIsBuy] = useState(false);
   const products = useAppSelector(state => state.data['cards']);
   const dispatch = useAppDispatch();
 

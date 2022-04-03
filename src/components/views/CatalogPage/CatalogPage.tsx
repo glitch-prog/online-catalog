@@ -8,6 +8,7 @@ import { Header } from '../Header/Header';
 import { ICatalogPageView } from './CatalogPage.interface';
 import './CatalogPage.css';
 import { ButtonContainer } from '../../containers/Button/Button';
+import { ModalBuyContainer } from '../../containers/ModalBuy/ModalBuy';
 
 export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleOnClickNavigateToAddPage, handleOnClickNavigateToCart, addToCart }: ICatalogPageView) => {
   const products = useAppSelector(state => state.data.cards);
@@ -20,16 +21,19 @@ export const CatalogPageView = ({ isOpen, isClose, handleOnClickSetOpen, handleO
         <main className="main_catalog_page">
           {products.length > 1 ? (
             products.map((el: ICard) => (
-              <div className="product__card" key={el.id}>
-                <img src={el.img} alt="img" />
-                <div className="product__info">
-                  <p>{el.name}</p>
-                  <p>{el.description}</p>
-                  <h4>{el.seller}</h4>
+              <>
+                <div className="product__card" key={el.id}>
+                  <img src={el.img} alt="img" />
+                  <div className="product__info">
+                    <p>{el.name}</p>
+                    <p>{el.description}</p>
+                    <h4>{el.seller}</h4>
+                  </div>
+                  <button onClick={() => addToCart(el)}>add to cart</button>
+                  <ButtonContainer text={'buy'} className={'buy__btn'} handleOnClick={() => {}} />
                 </div>
-                <button onClick={() => addToCart(el)}>add to cart</button>
-                <ButtonContainer text={'buy'} className={'buy__btn'} handleOnClick={() => {}} />
-              </div>
+                <ModalBuyContainer isBuy={true} el={el} />
+              </>
             ))
           ) : (
             <div>No products.Loading...</div>
